@@ -41,7 +41,7 @@ function RadnikProizvodnjaPage() {
 
             const response =
                 await axios.get(
-                    "https://localhost:7009/api/Proizvod",
+                    `${import.meta.env.VITE_API_URL}/Proizvod`,
                     {
                         headers: {
                             Authorization:
@@ -76,7 +76,7 @@ function RadnikProizvodnjaPage() {
 
                 const smjenaResponse =
                     await axios.post(
-                        "https://localhost:7009/api/Smjena",
+                        `${import.meta.env.VITE_API_URL}/Smjena`,
                         {
                             datum,
                             tipSmjene
@@ -106,7 +106,7 @@ function RadnikProizvodnjaPage() {
                         continue;
                    
                     await axios.post(
-                        "https://localhost:7009/api/Evidencija",
+                        `${import.meta.env.VITE_API_URL}/Evidencija`,
                         {
                             idSmjena:
                                 smjenaId,

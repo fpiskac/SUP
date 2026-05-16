@@ -22,7 +22,7 @@ function AdminRadniciPage() {
         try {
 
             const response = await axios.get(
-                "https://localhost:7009/api/Korisnik",
+                `${import.meta.env.VITE_API_URL}/Korisnik`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`
@@ -61,7 +61,7 @@ function AdminRadniciPage() {
         try {
 
             await axios.delete(
-                `https://localhost:7009/api/Korisnik/${id}`,
+                `${import.meta.env.VITE_API_URL}/Korisnik/${id}`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`
@@ -84,7 +84,7 @@ function AdminRadniciPage() {
         try {
 
             await axios.post(
-                "https://localhost:7009/api/Auth/register",
+                `${import.meta.env.VITE_API_URL}/Auth/register`,
                 {
                     ime,
                     korisnickoIme,

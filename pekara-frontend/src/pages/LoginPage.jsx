@@ -16,13 +16,12 @@ function LoginPage() {
         try {
 
             const response = await axios.post(
-                "https://localhost:7009/api/auth/login",
+                `${import.meta.env.VITE_API_URL}/auth/login`,
                 {
                     korisnickoIme,
                     lozinka
                 }
             );
-            console.log(response.data);
 
             localStorage.setItem("token", response.data.token);
             localStorage.setItem("role", response.data.role);
@@ -39,7 +38,7 @@ function LoginPage() {
            
 
             const role = response.data.role.toLowerCase();
-                console.log(role);
+
             if (role === "admin") {
                 navigate("/admin");
             }

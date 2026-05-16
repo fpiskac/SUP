@@ -46,7 +46,7 @@ function AdminProizvodiPage() {
         try {
 
             const response = await axios.get(
-                "https://localhost:7009/api/Proizvod",
+                `${import.meta.env.VITE_API_URL}/Proizvod`,
                 {
                     headers: {
                         Authorization:
@@ -68,7 +68,7 @@ function AdminProizvodiPage() {
         try {
 
             const response = await axios.get(
-                "https://localhost:7009/api/Recept",
+                `${import.meta.env.VITE_API_URL}/Recept`,
                 {
                     headers: {
                         Authorization:
@@ -136,7 +136,7 @@ function AdminProizvodiPage() {
                 if (editingId === null)
                 {
                     await axios.post(
-                        "https://localhost:7009/api/Proizvod",
+                        `${import.meta.env.VITE_API_URL}/Proizvod`,
                         data,
                         {
                             headers: {
@@ -149,7 +149,7 @@ function AdminProizvodiPage() {
                 else
                 {
                     await axios.put(
-                        `https://localhost:7009/api/Proizvod/${editingId}`,
+                        `${import.meta.env.VITE_API_URL}/Proizvod/${editingId}`,
                         data,
                         {
                             headers: {
@@ -185,7 +185,7 @@ function AdminProizvodiPage() {
         try {
 
             await axios.delete(
-                `https://localhost:7009/api/Proizvod/${id}`,
+                `${import.meta.env.VITE_API_URL}/Proizvod/${id}`,
                 {
                     headers: {
                         Authorization:

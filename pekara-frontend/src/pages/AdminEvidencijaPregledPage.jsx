@@ -33,7 +33,7 @@ function AdminEvidencijaPregledPage() {
 
             const response =
                 await axios.get(
-                    `https://localhost:7009/api/Evidencija/pregled?datum=${datum}&tipSmjene=${tipSmjene}`,
+                    `${import.meta.env.VITE_API_URL}/Evidencija/pregled?datum=${datum}&tipSmjene=${tipSmjene}`,
                     {
                         headers: {
                             Authorization:

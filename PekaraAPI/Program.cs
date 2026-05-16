@@ -62,7 +62,7 @@ if (app.Environment.IsDevelopment())
 }
 
 // HTTPS
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 // CORS
 app.UseCors("AllowReactApp");

@@ -32,7 +32,7 @@ function AdminReceptiPage() {
         try {
 
             const response = await axios.get(
-                "https://localhost:7009/api/Recept",
+                `${import.meta.env.VITE_API_URL}/Recept`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`
@@ -53,7 +53,7 @@ function AdminReceptiPage() {
         try {
 
             const response = await axios.get(
-                "https://localhost:7009/api/Sastojak",
+                `${import.meta.env.VITE_API_URL}/Sastojak`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`
@@ -129,7 +129,7 @@ function AdminReceptiPage() {
             if (editingId === null) {
 
                 await axios.post(
-                    "https://localhost:7009/api/Recept",
+                    `${import.meta.env.VITE_API_URL}/Recept`,
                     {
                         naziv,
                         brojKomada: Number(brojKomada)
@@ -142,7 +142,7 @@ function AdminReceptiPage() {
                 );
 
                 const sviRecepti = await axios.get(
-                    "https://localhost:7009/api/Recept",
+                    `${import.meta.env.VITE_API_URL}/Recept`,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`
@@ -159,7 +159,7 @@ function AdminReceptiPage() {
 
             } else {
                 await axios.delete(
-                    `https://localhost:7009/api/ReceptSastojak/recept/${editingId}`,
+                    `${import.meta.env.VITE_API_URL}/ReceptSastojak/recept/${editingId}`,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`
@@ -168,7 +168,7 @@ function AdminReceptiPage() {
                 );
 
                 await axios.put(
-                    `https://localhost:7009/api/Recept/${editingId}`,
+                    `${import.meta.env.VITE_API_URL}/Recept/${editingId}`,
                     {
                         naziv,
                         brojKomada: Number(brojKomada)
@@ -184,7 +184,7 @@ function AdminReceptiPage() {
             for (const rs of receptSastojci) {
 
                 await axios.post(
-                    "https://localhost:7009/api/ReceptSastojak",
+                    `${import.meta.env.VITE_API_URL}/ReceptSastojak`,
                     {
                         idRecept: receptId,
                         idSastojak: rs.idSastojak,
@@ -223,7 +223,7 @@ function AdminReceptiPage() {
         try {
 
             await axios.delete(
-                `https://localhost:7009/api/Recept/${id}`,
+                `${import.meta.env.VITE_API_URL}/Recept/${id}`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`
@@ -249,7 +249,7 @@ function AdminReceptiPage() {
 
 
                 const response = await axios.get(
-                    `https://localhost:7009/api/ReceptSastojak/recept/${recept.idRecept}`,
+                    `${import.meta.env.VITE_API_URL}/ReceptSastojak/recept/${recept.idRecept}`,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`

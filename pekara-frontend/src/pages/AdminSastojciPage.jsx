@@ -26,7 +26,7 @@ function AdminSastojciPage() {
         try {
 
             const response = await axios.get(
-                "https://localhost:7009/api/Sastojak",
+                `${import.meta.env.VITE_API_URL}/Sastojak`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`
@@ -81,7 +81,7 @@ function AdminSastojciPage() {
             if (editingId === null) {
 
                 await axios.post(
-                    "https://localhost:7009/api/Sastojak",
+                    `${import.meta.env.VITE_API_URL}/Sastojak`,
                     data,
                     {
                         headers: {
@@ -93,7 +93,7 @@ function AdminSastojciPage() {
             } else {
 
                 await axios.put(
-                    `https://localhost:7009/api/Sastojak/${editingId}`,
+                    `${import.meta.env.VITE_API_URL}/Sastojak/${editingId}`,
                     data,
                     {
                         headers: {
@@ -128,7 +128,7 @@ function AdminSastojciPage() {
         try {
 
             await axios.delete(
-                `https://localhost:7009/api/Sastojak/${id}`,
+                `${import.meta.env.VITE_API_URL}/Sastojak/${id}`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`
