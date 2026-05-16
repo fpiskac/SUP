@@ -1,0 +1,6 @@
+@PekaraAPI_HostAddress = http://localhost:5250
+
+GET {{PekaraAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
