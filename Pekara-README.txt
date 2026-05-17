@@ -177,7 +177,7 @@ U backend projektu otvoriti:
 ```text
 appsettings.json
 ```
-
+!!Podaci dolje su samo dani samo kao primjer, poterbno upisati vlastiti localhost,port i ostalo!!
 Postaviti:
 
 ```json
@@ -334,7 +334,7 @@ dotnet test
 
 Projekt koristi:
 
-* višeslojnu arhitekturu
+* MVC
 * REST API
 * JWT autentifikaciju
 * React frontend + ASP.NET backend arhitekturu
