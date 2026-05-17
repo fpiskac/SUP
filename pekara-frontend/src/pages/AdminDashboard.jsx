@@ -46,14 +46,14 @@ function AdminDashboard() {
                         Recepti
                     </div>
 
-                    <button
-                        style={styles.button}
+                    <div
+                        style={styles.card}
                         onClick={() =>
                             navigate("/admin/evidencija")
                         }
                     >
                         Evidencija
-                    </button>
+                    </div>
 
                 </div>
 

@@ -122,6 +122,10 @@ namespace PekaraAPI.Data
                 .Property(p => p.IzradaCijena)
                 .HasPrecision(10, 2);
 
+            modelBuilder.Entity<Recept>()
+                .Property(r => r.UkupnaCijena)
+                .HasPrecision(10, 2);
+
             modelBuilder.Entity<ReceptSastojak>()
                 .Property(rs => rs.Kolicina)
                 .HasPrecision(10, 3);

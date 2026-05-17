@@ -209,13 +209,13 @@ dotnet run
 Backend će biti dostupan na:
 
 ```text
-https://localhost:7009
+https://localhost:5009
 ```
 
 Swagger:
 
 ```text
-https://localhost:7009/swagger
+https://localhost:5009/swagger
 ```
 
 ---

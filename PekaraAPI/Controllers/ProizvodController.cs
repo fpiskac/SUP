@@ -89,6 +89,13 @@ namespace PekaraAPI.Controllers
                     * 1000;
             }
 
+            if(dto.ProdajnaCijena <= izradaCijena)
+            {
+                return BadRequest(
+                    "Prodajna cijena mora biti veća od cijene izrade."
+                );
+            }
+
             var proizvod = new Proizvod
             {
                 Naziv = dto.Naziv,

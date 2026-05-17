@@ -300,7 +300,7 @@ function AdminReceptiPage() {
 
                         <tr>
                             <th>Naziv</th>
-                            <th>Akcije</th>
+                            <th style={{textAlign: "center"}}>Akcije</th>
                         </tr>
 
                     </thead>
@@ -536,7 +536,8 @@ const styles = {
 
     actionButtons: {
         display: "flex",
-        gap: "10px"
+        gap: "10px",
+        justifyContent: "center"
     },
 
     addButtonContainer: {

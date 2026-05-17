@@ -53,6 +53,13 @@ namespace PekaraAPI.Controllers
                 IdProdavac = dto.IdProdavac
             };
 
+            if(dto.Prodano > dto.Proizvedeno)
+            {
+                return BadRequest(
+                    "Nije moguće prodati više nego proizvesti."
+                );
+            }
+
             _context.Evidencije.Add(evidencija);
 
             await _context.SaveChangesAsync();

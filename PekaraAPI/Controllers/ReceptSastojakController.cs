@@ -114,7 +114,7 @@ namespace PekaraAPI.Controllers
             if (recept != null)
             {
                 recept.UkupnaCijena =
-                    ukupnaCijena;
+                    ukupnaCijena / 100M;
 
                 await _context.SaveChangesAsync();
             }

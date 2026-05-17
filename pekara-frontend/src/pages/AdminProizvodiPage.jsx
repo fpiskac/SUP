@@ -12,6 +12,8 @@ function AdminProizvodiPage() {
 
     const [proizvodi, setProizvodi] = useState([]);
 
+    const [search, setSearch] = useState("");
+
     const [recepti, setRecepti] = useState([]);
 
     const [naziv, setNaziv] = useState("");
@@ -252,7 +254,17 @@ function AdminProizvodiPage() {
 
                 <div style={styles.topBar}>
 
-                    <h1>Proizvodi</h1>
+                <h1>Proizvodi</h1>
+
+                    <input
+                        type="text"
+                        placeholder="Pretraži proizvod..."
+                        value={search}
+                        onChange={(e) =>
+                            setSearch(e.target.value)
+                        }
+                        style={styles.searchInput}
+                    />
 
                 </div>
 
@@ -284,7 +296,15 @@ function AdminProizvodiPage() {
 
                     <tbody>
 
-                        {proizvodi.map((p) => (
+                        {proizvodi
+                            .filter((p) =>
+                                p.naziv
+                                    .toLowerCase()
+                                    .includes(
+                                        search.toLowerCase()
+                                    )
+                            )
+                            .map((p) => (
 
                             <tr
                                 key={
@@ -642,6 +662,14 @@ const styles = {
         display: "flex",
         justifyContent: "center",
         alignItems: "center"
+    },
+
+    searchInput: {
+        padding: "12px",
+        borderRadius: "8px",
+        border: "1px solid #ccc",
+        width: "250px",
+        height: "20px"
     },
 
     modalContent: {
