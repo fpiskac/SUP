@@ -30,8 +30,8 @@ namespace PekaraAPI.Controllers
                     IdEvidencija = e.IdEvidencija,
                     Proizvod = e.Proizvod != null ? e.Proizvod.Naziv : "",
                     Smjena = e.Smjena != null ? e.Smjena.TipSmjene : "",
-                    Proizvedeno = e.Proizvedeno,
-                    Prodano = e.Prodano,
+                    Proizvedeno = e.Proizvedeno ?? 0,
+                    Prodano = e.Prodano ?? 0,
                     Radnik = e.Radnik != null ? e.Radnik.Ime : "",
                     Prodavac = e.Prodavac != null ? e.Prodavac.Ime : ""
                 })
@@ -52,13 +52,6 @@ namespace PekaraAPI.Controllers
                 IdRadnik = dto.IdRadnik,
                 IdProdavac = dto.IdProdavac
             };
-
-            if(dto.Prodano > dto.Proizvedeno)
-            {
-                return BadRequest(
-                    "Nije moguće prodati više nego proizvesti."
-                );
-            }
 
             _context.Evidencije.Add(evidencija);
 

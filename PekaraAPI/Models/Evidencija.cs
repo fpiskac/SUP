@@ -21,10 +21,10 @@ public class Evidencija
     public Proizvod? Proizvod { get; set; }
 
     [Column("proizvedeno")]
-    public int Proizvedeno { get; set; } = 0;
+    public int? Proizvedeno { get; set; } = 0;
 
     [Column("prodano")]
-    public int Prodano { get; set; } = 0;
+    public int? Prodano { get; set; } = 0;
 
     [Column("id_radnik")]
     public int? IdRadnik { get; set; }
