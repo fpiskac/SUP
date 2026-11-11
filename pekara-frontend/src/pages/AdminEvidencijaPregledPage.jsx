@@ -51,6 +51,8 @@ function AdminEvidencijaPregledPage() {
                 if (!grupirano[naziv]) {
 
                     grupirano[naziv] = {
+                        id: e.id,
+                        
                         naziv,
 
                         proizvedeno: 0,
@@ -111,6 +113,18 @@ function AdminEvidencijaPregledPage() {
         -
         ukupnoProizvedeno;
 
+    const startProces = async (id) => {
+        await fetch(`/api/evidencija-proces/start/${id}`, {
+            method: "POST"
+        });
+    };
+
+    const potvrdi = async (id) => {
+        await fetch(`/api/evidencija-proces/potvrdi/${id}`, {
+            method: "POST"
+        });
+    };
+
     return (
         <div>
 
@@ -146,6 +160,9 @@ function AdminEvidencijaPregledPage() {
                                 Ostalo
                             </th>
 
+                            <th>
+                                Akcije
+                            </th>
                         </tr>
 
                     </thead>
@@ -153,6 +170,7 @@ function AdminEvidencijaPregledPage() {
                     <tbody>
 
                         {evidencija.map(
+                            
                             (e, index) => (
 
                             <tr key={index}>
@@ -173,6 +191,15 @@ function AdminEvidencijaPregledPage() {
                                         e.prodano
                                         || 0
                                     }
+                                </td>
+
+                                <td>
+                                    <button onClick={() => startProces(e.id)}>
+                                        Pokreni proces
+                                    </button>
+                                    <button onClick={() => potvrdi(e.id)}>
+                                        Potvrdi
+                                    </button>
                                 </td>
 
                             </tr>

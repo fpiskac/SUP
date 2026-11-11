@@ -29,12 +29,6 @@ Aplikacija za upravljanje pekarom izrađena u:
 
 ---
 
-# PREUZIMANJE PROJEKTA
-
-```bash
-git clone https://github.com/fpiskac/SUP.git
-```
-
 Otvoriti projekt u:
 
 * Visual Studio 2022
